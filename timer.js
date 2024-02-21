@@ -17,6 +17,33 @@ const displayTime = () => {
 
  
 displayTime();
+start = (e) => {
+    if (finished) {
+        
+        return
+    }
+    const text = e.target.textContent;
+    e.target.textContent = text === 'Start' ? 'Stop' : 'Start';
+    if(running) {
+        clearInterval(timer)
+        running = false;
+        return
+       }
+
+       running = true;
+ timer = setInterval(() => {
+   
+   
+    initialSeconds--
+   
+    displayTime()
+    if (initialSeconds === 0) {
+        clearInterval(timer);
+        finished = true;
+        e.target.textContent = 'Ok'
+    }
+}, 1000)
+}
 
 const timerBtn = document.querySelector('#timer')
 const stopwatchBtn = document.querySelector('#stopwatch')
