@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .minutes::after {
+            content: 'm';
+            font-size: 25px;
+            
+        }
+        .seconds::after {
+            content: 's';
+            font-size: 25px;
+            
+        }
+       .buttons button {
+            padding: 5px;
+            border: none;
+            background-color: papayawhip;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color .3s ease-in-out;
+        }
+        .buttons button:hover {
+            background-color: aquamarine;
+        }
+        .googleTimer {
+            background-color: rgb(72, 10, 129);
+            max-width: 500px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        span {
+            font-size: 54px;
+            color: white;
+        }
+        .timerStopwatch {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            place-items: center;
+            text-align: center;
+        }
+        #timer {
+            width: 50%;
+            color: papayawhip;
+        }
+        #stopwatch {
+            width: 50%;
+            color: papayawhip;
+        }
+        .timerStopwatch button {
+            border: none;
+            background-color:rgb(72, 10, 129) ;
+        }
+        .borderBottom {
+            border-bottom: 1px solid white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="googleTimer">
+        <div class="timerStopwatch">
+            <button id="timer" onclick="setTimer(event)">Timer</button>
+            <button id="stopwatch" onclick="setStopwatch(event)">Stopwatch</button>
+        </div>
+        <span class="minutes"></span>
+        <span class="seconds"></span>
+        <div class="buttons">
+        <button class="startTimer" onclick="start(event)">Start</button>
+    <button class="resetTimer" onclick="reset(event)">Reset</button></div>
+    </div>
+    
+    <script src="timer.js"></script>
+</body>
+</html>
